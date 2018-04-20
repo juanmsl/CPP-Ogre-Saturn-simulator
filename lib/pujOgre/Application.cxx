@@ -2,6 +2,7 @@
 
 #include <pujOgre/Application.h>
 
+#include <iostream>
 #include <OgreConfigFile.h>
 #include <OgreLogManager.h>
 #include <OgreOverlaySystem.h>
@@ -10,6 +11,7 @@
 #include <OgreTextureManager.h>
 #include <OgreViewport.h>
 
+#include <Bites/OgreInput.h>
 #include <Bites/OgreCameraMan.h>
 
 #include <OISInputManager.h>
@@ -186,8 +188,16 @@ bool pujOgre::Application::keyPressed(const OIS::KeyEvent& arg) {
   evt.keysym.sym = arg.key;
   // evt.keysym.mod = arg.key;
   evt.repeat = 1;
-  this->m_CameraMan->keyPressed(evt);
-  return(true);
+
+  switch(arg.key) {
+    case OIS::KC_ESCAPE:
+      this->m_Root->queueEndRendering();
+      break;
+  }
+
+  this->m_CameraMan->keyPressed( evt );
+
+  return true;
 }
 
 // -------------------------------------------------------------------------

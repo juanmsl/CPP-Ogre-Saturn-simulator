@@ -19,8 +19,7 @@ namespace OgreBites {
 }
 
 namespace pujOgre {
-  /**
-   */
+  
   class Application
     : public Ogre::FrameListener,
       public Ogre::WindowEventListener,
