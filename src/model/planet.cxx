@@ -1,22 +1,10 @@
 #include "planet.hxx"
 
-Planet::Planet() :
-    position(Ogre::Vector3(0, 0, 0)),
-    mass(Ogre::Real(1)),
-    radius(Ogre::Real(1)),
-    rotation(Ogre::Radian(0)) {}
-
-Planet::Planet(const Ogre::Vector3 position) :
-    position(position),
-    mass(Ogre::Real(1)),
-    radius(Ogre::Real(1)),
-    rotation(Ogre::Radian(0)) {}
-
-Planet::Planet(const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius) :
+Planet::Planet(const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation) :
     position(position),
     mass(mass),
     radius(radius),
-    rotation(Ogre::Radian(0)) {}
+    rotation(rotation) {}
 
 void Planet::setPosition(const Ogre::Vector3 position) {
     this->position = position;

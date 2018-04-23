@@ -2,9 +2,10 @@
 
 #include <iostream>
 
-PlanetView::PlanetView(Ogre::SceneManager* sceneManager, const std::string& name, const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius) :
+PlanetView::PlanetView(Ogre::SceneManager* sceneManager, const std::string& name, const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation) :
     name(name),
-    planetController(PlanetController(this, position, mass, radius)),
+    planet(Planet(position, mass, radius, rotation)),
+    planetController(PlanetController(this)),
     sceneManager(sceneManager) {
     this->create();
 }
@@ -24,12 +25,15 @@ void PlanetView::create() {
 }
 
 void PlanetView::draw() {
-    std::cout << this->planetController.getPlanet()->getRotation() << std::endl;
-    this->node->setPosition(this->planetController.getPlanet()->getPosition());
-    this->node->scale(Ogre::Vector3(this->planetController.getPlanet()->getRadius()));
-    //this->node->rotate(Ogre::Vector3(0, 1, 0), Ogre::Radian(0));
+    this->node->setPosition(this->planet.getPosition());
+    this->node->setScale(Ogre::Vector3(this->planet.getRadius()));
+    this->node->rotate(Ogre::Vector3(0, 1, 0), this->planet.getRotation());
 }
 
 PlanetController* PlanetView::getPlanetController() {
     return &this->planetController;
+}
+
+Planet* PlanetView::getPlanet() {
+    return &this->planet;
 }

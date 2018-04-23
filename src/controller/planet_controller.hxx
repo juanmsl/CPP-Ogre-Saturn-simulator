@@ -7,17 +7,14 @@ class PlanetView;
 
 class PlanetController {
 protected:
-    Planet planet;
     PlanetView* planetView;
     
 public:
-    PlanetController(PlanetView* planetView, const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius);
+    PlanetController(PlanetView* planetView);
     virtual ~PlanetController();
 
     void update(const Ogre::Real time);
     void attract();
-
-    Planet* getPlanet();
 };
 
 #endif

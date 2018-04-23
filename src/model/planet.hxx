@@ -12,9 +12,7 @@ protected:
     Ogre::Radian rotation;
 
 public:
-    Planet();
-    Planet(const Ogre::Vector3 position);
-    Planet(const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius);
+    Planet(const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation);
 
     void setPosition(const Ogre::Vector3 position);
     void setMass(const Ogre::Real mass);
