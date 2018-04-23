@@ -9,9 +9,15 @@
 #include <OgreSceneNode.h>
 #include <OgreSkeletonInstance.h>
 
+#include <iostream>
+
 App::App() : pujOgre::Application() {}
 
-App::~App() {}
+App::~App() {
+  for(PlanetView* planet : this->planets) {
+    delete planet;
+  }
+}
 
 void App::createCamera() {
   this->pujOgre::Application::createCamera();
@@ -37,30 +43,25 @@ void App::createScene() {
   light2->setDiffuseColour(0.5, 0.5, 0.5);
   light2->setSpecularColour(0.5, 0.5, 0.5);
 
-  // Create a plane
-  Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
-  Ogre::MeshManager::getSingleton().
-    createPlane(
-      "plane",
-      Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
-      plane,
-      150, 150, 20, 20, true, 1, 5, 5,
-      Ogre::Vector3::UNIT_Z
-     );
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "mercurio",  Ogre::Vector3(0, 0, 0), Ogre::Real(10), Ogre::Real(5), Ogre::Radian(0.2)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "venus",     Ogre::Vector3(0, 0, -15), Ogre::Real(10), Ogre::Real(10), Ogre::Radian(1)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "tierra",    Ogre::Vector3(0, 0, -40), Ogre::Real(10), Ogre::Real(15), Ogre::Radian(1)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "marte",     Ogre::Vector3(0, 0, -75), Ogre::Real(10), Ogre::Real(20), Ogre::Radian(1)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "jupiter",   Ogre::Vector3(0, 0, -120), Ogre::Real(10), Ogre::Real(25), Ogre::Radian(1)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "saturno",   Ogre::Vector3(0, 0, -175), Ogre::Real(10), Ogre::Real(30), Ogre::Radian(1)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "urano",     Ogre::Vector3(0, 0, -240), Ogre::Real(10), Ogre::Real(35), Ogre::Radian(1)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "neptuno",   Ogre::Vector3(0, 0, -315), Ogre::Real(10), Ogre::Real(40), Ogre::Radian(1)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "pluton",    Ogre::Vector3(0, 0, -400), Ogre::Real(10), Ogre::Real(45), Ogre::Radian(1)));
 
-  // Associate a floor entity with the created plane
-  Ogre::Entity* floor = this->m_SceneMgr->createEntity("floor", "plane");
-  floor->setMaterialName("Mat");
-  this->m_SceneMgr->getRootSceneNode()->attachObject(floor);
 }
 
 bool App::frameRenderingQueued(const Ogre::FrameEvent& evt) {
   Ogre::Real time = evt.timeSinceLastFrame;
   if(this->pujOgre::Application::frameRenderingQueued(evt)) {
-    this->m_AnimationState->addTime(time);
+    for(PlanetView* planet : this->planets) {
+      planet->getPlanetController()->update(time);
+    }
     return true;
   }
   return false;
 }
-
-void App::createAnimations() {}
