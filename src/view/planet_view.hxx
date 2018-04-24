@@ -5,7 +5,6 @@
 #include <OgreSceneNode.h>
 #include <OgreEntity.h>
 #include <OgreVector3.h>
-#include <OgreQuaternion.h>
 #include "../controller/planet_controller.hxx"
 #include "../model/planet.hxx"
 
@@ -16,13 +15,14 @@ protected:
     Ogre::Entity* entity;
     Ogre::SceneNode* node;
     std::string name;
+    std::string mesh;
+    std::string material;
     Planet planet;
 
 public:
-    PlanetView(Ogre::SceneManager* sceneManager, const std::string& name, const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation);
+    PlanetView(Ogre::SceneManager* sceneManager, const std::string& name, const std::string& mesh, const std::string& material, const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation);
     virtual ~PlanetView();
 
-    void create();
     void draw();
 
     PlanetController* getPlanetController();
