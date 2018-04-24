@@ -35,7 +35,7 @@ material NeptunoMaterial
                 texture neptune.jpg
                 tex_address_mode wrap
                 scale 1.0 1.0
-                env_map planar
+                env_map spherical
                 colour_op modulate
             }
         }

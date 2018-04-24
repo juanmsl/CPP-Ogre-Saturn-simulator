@@ -12,7 +12,7 @@ PlanetView::PlanetView(Ogre::SceneManager* sceneManager, const std::string& name
 
     this->entity = this->sceneManager->createEntity(this->name, this->mesh);
     this->entity->setCastShadows(true);
-    //this->entity->setMaterialName(this->material);
+    //this->entity->setMaterialName("Mat");
 
     this->node = this->sceneManager->getRootSceneNode()->createChildSceneNode(this->name + "_node");
     this->node->attachObject(this->entity);
