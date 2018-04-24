@@ -35,6 +35,7 @@ material MarsMaterial
                 texture marssurface.jpg
                 tex_address_mode wrap
                 scale 1.0 1.0
+                env_map planar
                 colour_op modulate
             }
         }

@@ -21,9 +21,9 @@ App::~App() {
 
 void App::createCamera() {
   this->pujOgre::Application::createCamera();
-  this->m_Camera->setPosition(Ogre::Vector3(0, 25, 110));
-  this->m_Camera->lookAt(Ogre::Vector3(0, 10, 0));
-  this->m_Camera->setNearClipDistance(5);
+  this->m_Camera->setPosition(Ogre::Vector3(0, 500, 1));
+  this->m_Camera->lookAt(Ogre::Vector3(0, 0, 0));
+  this->m_Camera->setNearClipDistance(50);
 }
 
 void App::createScene() {
@@ -43,16 +43,15 @@ void App::createScene() {
   light2->setDiffuseColour(0.5, 0.5, 0.5);
   light2->setSpecularColour(0.5, 0.5, 0.5);
 
-  this->planets.push_back(new PlanetView(this->m_SceneMgr, "mercurio",  Ogre::Vector3(0, 0, 0), Ogre::Real(10), Ogre::Real(5), Ogre::Radian(0.2)));
-  this->planets.push_back(new PlanetView(this->m_SceneMgr, "venus",     Ogre::Vector3(0, 0, -15), Ogre::Real(10), Ogre::Real(10), Ogre::Radian(1)));
-  this->planets.push_back(new PlanetView(this->m_SceneMgr, "tierra",    Ogre::Vector3(0, 0, -40), Ogre::Real(10), Ogre::Real(15), Ogre::Radian(1)));
-  this->planets.push_back(new PlanetView(this->m_SceneMgr, "marte",     Ogre::Vector3(0, 0, -75), Ogre::Real(10), Ogre::Real(20), Ogre::Radian(1)));
-  this->planets.push_back(new PlanetView(this->m_SceneMgr, "jupiter",   Ogre::Vector3(0, 0, -120), Ogre::Real(10), Ogre::Real(25), Ogre::Radian(1)));
-  this->planets.push_back(new PlanetView(this->m_SceneMgr, "saturno",   Ogre::Vector3(0, 0, -175), Ogre::Real(10), Ogre::Real(30), Ogre::Radian(1)));
-  this->planets.push_back(new PlanetView(this->m_SceneMgr, "urano",     Ogre::Vector3(0, 0, -240), Ogre::Real(10), Ogre::Real(35), Ogre::Radian(1)));
-  this->planets.push_back(new PlanetView(this->m_SceneMgr, "neptuno",   Ogre::Vector3(0, 0, -315), Ogre::Real(10), Ogre::Real(40), Ogre::Radian(1)));
-  this->planets.push_back(new PlanetView(this->m_SceneMgr, "pluton",    Ogre::Vector3(0, 0, -400), Ogre::Real(10), Ogre::Real(45), Ogre::Radian(1)));
-
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "mercurio", "mercury.mesh", "", Ogre::Vector3(-300, 0, 200), Ogre::Real(10), Ogre::Real(4), Ogre::Radian(0)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "venus", "Venus.mesh", "", Ogre::Vector3(-280, 0, 160), Ogre::Real(10), Ogre::Real(6), Ogre::Radian(0)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "tierra", "earth.mesh", "", Ogre::Vector3(-220, 0, 160), Ogre::Real(10), Ogre::Real(8), Ogre::Radian(0.5)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "marte", "Mars.mesh", "", Ogre::Vector3(-240, 0, 100), Ogre::Real(10), Ogre::Real(8), Ogre::Radian(0)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "jupiter", "jupiter.mesh", "", Ogre::Vector3(-150, 0, 30), Ogre::Real(10), Ogre::Real(25), Ogre::Radian(0)));
+  //this->planets.push_back(new PlanetView(this->m_SceneMgr, "saturno", "Saturn.mesh", "", Ogre::Vector3(0, 0, 0), Ogre::Real(10), Ogre::Real(30), Ogre::Radian(0)));
+  //this->planets.push_back(new PlanetView(this->m_SceneMgr, "urano", "Urano.mesh", "", Ogre::Vector3(0, 0, 0), Ogre::Real(10), Ogre::Real(35), Ogre::Radian(0)));
+  //this->planets.push_back(new PlanetView(this->m_SceneMgr, "neptuno", "Neptuno.mesh", "", Ogre::Vector3(0, 0, 0), Ogre::Real(10), Ogre::Real(40), Ogre::Radian(0)));
+  
 }
 
 bool App::frameRenderingQueued(const Ogre::FrameEvent& evt) {
