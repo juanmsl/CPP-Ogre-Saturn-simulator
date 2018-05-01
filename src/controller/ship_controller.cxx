@@ -23,13 +23,13 @@ void ShipController::update(const Ogre::Real time) {
 }
 
 void ShipController::acelerate() {
-    Ogre::Vector3 aceleration = this->shipView->getShip()->getAceleration();
-    aceleration[2]++;
-    this->shipView->getShip()->setAceleration(aceleration);
+    Ogre::Vector3 velocity = this->shipView->getShip()->getVelocity();
+    velocity[2]++;
+    this->shipView->getShip()->setVelocity(velocity);
 }
 
 void ShipController::deacelerate() {
-    Ogre::Vector3 aceleration = this->shipView->getShip()->getAceleration();
-    aceleration[2]--;
-    this->shipView->getShip()->setAceleration(aceleration);
+    Ogre::Vector3 velocity = this->shipView->getShip()->getVelocity();
+    velocity[2]--;
+    this->shipView->getShip()->setVelocity(velocity);
 }
