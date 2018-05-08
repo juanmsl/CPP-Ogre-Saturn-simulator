@@ -1,5 +1,7 @@
 #include "../view/ship_view.hxx"
 
+#include <iostream>
+
 ShipController::ShipController(ShipView* shipView) :
     shipView(shipView) {
 }
@@ -10,26 +12,28 @@ ShipController::~ShipController() {
 
 void ShipController::update(const Ogre::Real time) {
     Ogre::Vector3 position = this->shipView->getShip()->getPosition();
-    Ogre::Vector3 velocity = this->shipView->getShip()->getVelocity();
-    Ogre::Vector3 aceleration = this->shipView->getShip()->getAceleration();
+    Ogre::Real velocity = this->shipView->getShip()->getVelocity();
+    Ogre::Vector3 direction = this->shipView->getShip()->getDirection();
 
-    position += velocity * time;
-    velocity += aceleration * time;
+    position += direction * velocity * time;
 
     this->shipView->getShip()->setPosition(position);
-    this->shipView->getShip()->setVelocity(velocity);
     
     this->shipView->draw();
 }
 
 void ShipController::acelerate() {
-    Ogre::Vector3 velocity = this->shipView->getShip()->getVelocity();
-    velocity[2]++;
+    Ogre::Real velocity = this->shipView->getShip()->getVelocity();
+
+    velocity += 10;
+
     this->shipView->getShip()->setVelocity(velocity);
 }
 
 void ShipController::deacelerate() {
-    Ogre::Vector3 velocity = this->shipView->getShip()->getVelocity();
-    velocity[2]--;
+    Ogre::Real velocity = this->shipView->getShip()->getVelocity();
+
+    velocity -= 10;
+
     this->shipView->getShip()->setVelocity(velocity);
 }

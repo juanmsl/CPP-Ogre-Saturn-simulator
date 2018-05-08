@@ -18,13 +18,7 @@ App::~App() {
     delete planet;
   }
   delete this->shipView;
-}
-
-void App::createCamera() {
-  this->pujOgre::Application::createCamera();
-  this->m_Camera->setPosition(Ogre::Vector3(-400, 0, 50));
-  this->m_Camera->lookAt(Ogre::Vector3(4800, 0, 0));
-  this->m_Camera->setNearClipDistance(5);
+  delete this->cameraManager;
 }
 
 void App::createScene() {
@@ -44,7 +38,8 @@ void App::createScene() {
   light2->setDiffuseColour(1.0, 1.0, 1.0);
   light2->setSpecularColour(1.0, 1.0, 1.0);
 
-  this->shipView = new ShipView(this->m_SceneMgr, "ship");
+  this->cameraManager = new CameraManager(this->m_Camera);
+  this->shipView = new ShipView(this->m_SceneMgr, this->cameraManager, "ship");
   //this->planets.push_back(new PlanetView(this->m_SceneMgr, "sol", "sun.mesh", "", Ogre::Vector3(0, 0, 0), Ogre::Real(10), Ogre::Real(40), Ogre::Radian(0.01)));
   this->planets.push_back(new PlanetView(this->m_SceneMgr, "mercurio", "mercury.mesh", "", Ogre::Vector3(50, 0, -200), Ogre::Real(10), Ogre::Real(20), Ogre::Radian(0.01)));
   this->planets.push_back(new PlanetView(this->m_SceneMgr, "venus", "Venus.mesh", "", Ogre::Vector3(400, 0, 280), Ogre::Real(10), Ogre::Real(30), Ogre::Radian(0.01)));
@@ -64,7 +59,6 @@ bool App::frameRenderingQueued(const Ogre::FrameEvent& evt) {
       planet->getPlanetController()->update(time);
     }
     this->shipView->getShipController()->update(time);
-    this->m_Camera->lookAt(this->shipView->getShip()->getPosition());
     return true;
   }
   return false;
@@ -74,19 +68,20 @@ bool App::keyPressed( const OIS::KeyEvent& arg ) {
   this->pujOgre::Application::keyPressed(arg);
   
   switch(arg.key) {
-    case OIS::KC_DOWN:
+    case OIS::KC_W:
       this->shipView->getShipController()->acelerate();
       break;
-    case OIS::KC_UP:
+    case OIS::KC_S:
       this->shipView->getShipController()->deacelerate();
-      break;
-    case OIS::KC_1:
-      this->m_Camera->setPosition(Ogre::Vector3(-400, 0, 50));
-      break;
-    case OIS::KC_2:
-      this->m_Camera->setPosition(Ogre::Vector3(0, 7000, 1));
       break;
   }
 
   return true;
+}
+
+bool App::mouseMoved( const OIS::MouseEvent& arg ) {
+  Ogre::Real x = this->m_Mouse->getMouseState().X.rel;
+  Ogre::Real y = this->m_Mouse->getMouseState().Y.rel;
+
+  this->shipView->move(x, y);
 }

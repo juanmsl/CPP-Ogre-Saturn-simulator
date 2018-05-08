@@ -213,9 +213,7 @@ bool pujOgre::Application::keyReleased(const OIS::KeyEvent& arg) {
 
 // -------------------------------------------------------------------------
 bool pujOgre::Application::mouseMoved(const OIS::MouseEvent& arg) {
-  /* TODO
-     this->m_CameraMan->injectMouseMove(arg);
-  */
+  
   return(true);
 }
 
