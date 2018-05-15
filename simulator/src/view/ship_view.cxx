@@ -1,4 +1,4 @@
-#include "ship_view.hxx"
+#include <view/ship_view.hxx>
 
 #include <iostream>
 

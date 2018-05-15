@@ -4,7 +4,8 @@
 #include <OgreRoot.h>
 #include <OgreCamera.h>
 #include <OgreVector3.h>
-#include "../model/ship.hxx"
+
+#include <model/ship.hxx>
 
 class CameraManager {
 protected:

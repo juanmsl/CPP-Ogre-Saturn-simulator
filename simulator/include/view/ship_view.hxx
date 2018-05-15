@@ -5,9 +5,10 @@
 #include <OgreSceneNode.h>
 #include <OgreEntity.h>
 #include <OgreVector3.h>
-#include "../controller/ship_controller.hxx"
-#include "../model/ship.hxx"
-#include "../model/camera_manager.hxx"
+
+#include <controller/ship_controller.hxx>
+#include <model/ship.hxx>
+#include <common/camera_manager.hxx>
 
 class ShipView {
 protected:

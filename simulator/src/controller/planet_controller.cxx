@@ -1,4 +1,4 @@
-#include "../view/planet_view.hxx"
+#include <view/planet_view.hxx>
 
 PlanetController::PlanetController(PlanetView* planetView) :
     planetView(planetView) {

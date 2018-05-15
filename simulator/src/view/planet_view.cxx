@@ -1,4 +1,4 @@
-#include "planet_view.hxx"
+#include <view/planet_view.hxx>
 
 #include <iostream>
 

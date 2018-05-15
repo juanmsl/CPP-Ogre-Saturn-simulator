@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "model/app.hxx"
+#include <common/app.hxx>
 
 // Main
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32

@@ -1,4 +1,4 @@
-#include "math_utilities.hxx"
+#include <common/math_utilities.hxx>
 
 bool MathUtilities::isInsideInTriangle(const Ogre::Vector3& p, const Ogre::Vector3& a, const Ogre::Vector3& b, const Ogre::Vector3& c) {
     Ogre::Vector3 v0 = b - a;

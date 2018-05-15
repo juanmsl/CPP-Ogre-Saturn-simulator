@@ -1,7 +1,7 @@
 #ifndef __SHIP_CONTROLLER_HXX__
 #define __SHIP_CONTROLLER_HXX__
 
-#include "../model/ship.hxx"
+#include <model/ship.hxx>
 
 class ShipView;
 

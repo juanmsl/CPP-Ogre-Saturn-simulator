@@ -1,4 +1,4 @@
-#include "camera_manager.hxx"
+#include <common/camera_manager.hxx>
 
 CameraManager::CameraManager(Ogre::Camera* camera) :
     camera(camera) {

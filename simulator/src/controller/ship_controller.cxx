@@ -1,4 +1,4 @@
-#include "../view/ship_view.hxx"
+#include <view/ship_view.hxx>
 
 #include <iostream>
 
@@ -25,7 +25,7 @@ void ShipController::update(const Ogre::Real time) {
 void ShipController::acelerate() {
     Ogre::Real velocity = this->shipView->getShip()->getVelocity();
 
-    velocity += 10;
+    velocity += 100;
 
     this->shipView->getShip()->setVelocity(velocity);
 }
@@ -33,7 +33,7 @@ void ShipController::acelerate() {
 void ShipController::deacelerate() {
     Ogre::Real velocity = this->shipView->getShip()->getVelocity();
 
-    velocity -= 10;
+    velocity -= 100;
 
     this->shipView->getShip()->setVelocity(velocity);
 }

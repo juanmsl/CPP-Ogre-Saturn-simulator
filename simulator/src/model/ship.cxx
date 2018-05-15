@@ -1,4 +1,4 @@
-#include "ship.hxx"
+#include <model/ship.hxx>
 
 Ship::Ship() :
     position(Ogre::Vector3(-380, 0, 40)),

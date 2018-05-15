@@ -1,6 +1,6 @@
 // Based from: http://www.ogre3d.org/tikiwiki/
 
-#include <pujOgre/Application.h>
+#include <PujOgreApplication.h>
 
 #include <iostream>
 #include <OgreConfigFile.h>

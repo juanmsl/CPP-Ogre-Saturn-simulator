@@ -3,10 +3,11 @@
 
 #include <vector>
 
-#include <pujOgre/Application.h>
-#include "../view/ship_view.hxx"
-#include "../view/planet_view.hxx"
-#include "../model/camera_manager.hxx"
+#include <PujOgreApplication.h>
+
+#include <view/ship_view.hxx>
+#include <view/planet_view.hxx>
+#include <common/camera_manager.hxx>
 
 class App : public pujOgre::Application {
 protected:
