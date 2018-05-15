@@ -92,7 +92,7 @@ void pujOgre::Application::createCamera() {
   this->m_Camera = this->m_SceneMgr->createCamera("MainCam");
   this->m_Camera->setPosition(Ogre::Vector3(0, 0, 0));
   this->m_Camera->lookAt(Ogre::Vector3(0, 0,-1));
-  this->m_Camera->setNearClipDistance(5);
+  this->m_Camera->setNearClipDistance(3);
 
   Ogre::SceneNode* n = this->m_SceneMgr->getRootSceneNode()->createChildSceneNode("MainCamNode");
   n->attachObject(this->m_Camera);

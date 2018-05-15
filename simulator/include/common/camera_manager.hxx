@@ -4,14 +4,14 @@
 #include <OgreRoot.h>
 #include <OgreCamera.h>
 #include <OgreVector3.h>
+#include <OgreSceneManager.h>
+#include <OgreSceneNode.h>
 
 #include <model/ship.hxx>
 
 class CameraManager {
-protected:
+public:
     Ogre::Camera* camera;
-    Ogre::Vector3 position;
-    Ogre::Vector3 direction;
 
 public:
     CameraManager(Ogre::Camera* camera);

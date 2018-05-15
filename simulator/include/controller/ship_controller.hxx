@@ -8,9 +8,10 @@ class ShipView;
 class ShipController {
 protected:
     ShipView* shipView;
+    Ship* ship;
 
 public:
-    ShipController(ShipView* shipView);
+    ShipController(ShipView* shipView, Ship* ship);
     virtual ~ShipController();
 
     void update(const Ogre::Real time);

@@ -6,7 +6,7 @@ ShipView::ShipView(Ogre::SceneManager* sceneManager, CameraManager* cameraManage
     name(name),
     ship(Ship()),
     cameraManager(cameraManager),
-    shipController(ShipController(this)),
+    shipController(ShipController(this, &this->ship)),
     sceneManager(sceneManager) {
 
     this->entity = this->sceneManager->createEntity(this->name, "ship.mesh");
@@ -28,9 +28,9 @@ void ShipView::draw() {
 }
 
 void ShipView::move(const Ogre::Real x, const Ogre::Real y) {
-    this->node->yaw(Ogre::Degree(x * -0.05), Ogre::Node::TS_LOCAL);
+    this->node->yaw(Ogre::Degree(x * -0.05), Ogre::Node::TS_WORLD);
     this->node->pitch(Ogre::Degree(y * -0.05), Ogre::Node::TS_LOCAL);
-    this->ship.setDirection(this->node->_getDerivedOrientation() * Ogre::Vector3::NEGATIVE_UNIT_Z);
+    this->ship.setDirection(this->node->getOrientation() * Ogre::Vector3::NEGATIVE_UNIT_Z);
 }
 
 ShipController* ShipView::getShipController() {

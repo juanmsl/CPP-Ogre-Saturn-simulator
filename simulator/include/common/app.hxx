@@ -4,6 +4,15 @@
 #include <vector>
 
 #include <PujOgreApplication.h>
+#include <Bites/OgreWindowEventUtilities.h>
+
+#include <OgreBone.h>
+#include <OgreCamera.h>
+#include <OgreEntity.h>
+#include <OgreKeyFrame.h>
+#include <OgreMeshManager.h>
+#include <OgreSceneManager.h>
+#include <OgreSceneNode.h>
 
 #include <view/ship_view.hxx>
 #include <view/planet_view.hxx>
