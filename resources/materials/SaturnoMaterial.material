@@ -35,7 +35,6 @@ material SaturnoMaterial
                 texture saturn.jpg
                 tex_address_mode wrap
                 scale 1.0 1.0
-                env_map spherical
                 colour_op modulate
             }
         }
