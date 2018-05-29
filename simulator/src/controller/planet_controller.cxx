@@ -27,7 +27,7 @@ void PlanetController::attract() {
     Ogre::Vector3 aceleration = F / m2;
 
     Ogre::Vector3 velocity = ship->getVelocity();
-    velocity += aceleration;
+    velocity += F;
 
     ship->setVelocity(velocity);
 

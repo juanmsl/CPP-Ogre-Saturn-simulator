@@ -6,6 +6,8 @@
 
 #include <common/transform.hxx>
 
+#include <common/math_utilities.hxx>
+
 class Ship : public Transform {
 protected:
     Ogre::Real size;
