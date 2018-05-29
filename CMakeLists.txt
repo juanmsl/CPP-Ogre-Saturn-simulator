@@ -44,7 +44,7 @@ find_library(
   NAMES OIS
 )
 
-subdirs(lib src)
+subdirs(lib simulator)
 
 
 file(GLOB CONFIG "${CMAKE_CURRENT_SOURCE_DIR}/config/*.cfg")

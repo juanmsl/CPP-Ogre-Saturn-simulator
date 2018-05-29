@@ -1,7 +1,7 @@
 #ifndef __PLANET_CONTROLLER__
 #define __PLANET_CONTROLLER__
 
-#include "../model/planet.hxx"
+#include <model/planet.hxx>
 
 class PlanetView;
 

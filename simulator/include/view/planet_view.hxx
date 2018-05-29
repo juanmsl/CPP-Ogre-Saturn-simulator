@@ -5,8 +5,9 @@
 #include <OgreSceneNode.h>
 #include <OgreEntity.h>
 #include <OgreVector3.h>
-#include "../controller/planet_controller.hxx"
-#include "../model/planet.hxx"
+
+#include <controller/planet_controller.hxx>
+#include <model/planet.hxx>
 
 class PlanetView {
 protected:

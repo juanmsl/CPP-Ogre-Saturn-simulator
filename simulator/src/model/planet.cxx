@@ -1,4 +1,4 @@
-#include "planet.hxx"
+#include <model/planet.hxx>
 
 Planet::Planet(const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation) :
     position(position),
