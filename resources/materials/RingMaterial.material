@@ -8,9 +8,9 @@ material RingMaterial
     {
         pass RingMaterial
         {
-            ambient 0.800000011920929 0.800000011920929 0.800000011920929 1.0
-            diffuse 0.6400000190734865 0.6400000190734865 0.6400000190734865 1.0
-            specular 0.5 0.5 0.5 1.0 12.5
+            ambient 0.07658004760742188 0.07658004760742188 0.07658004760742188 1.0
+            diffuse 0.06126403899884281 0.06126403899884281 0.06126403899884281 1.0
+            specular 0.36782923340797424 0.36782923340797424 0.36782923340797424 1.0 12.5
             emissive 0.0 0.0 0.0 1.0
 
             alpha_to_coverage off
@@ -30,14 +30,6 @@ material RingMaterial
             shading gouraud
             transparent_sorting on
 
-            texture_unit 
-            {
-                texture ring.png
-                tex_address_mode wrap
-                scale 1.0 1.0
-                env_map spherical
-                colour_op modulate
-            }
         }
     }
 }
