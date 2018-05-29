@@ -2,11 +2,11 @@
 
 #include <iostream>
 
-PlanetView::PlanetView(Ogre::SceneManager* sceneManager, const std::string& name, const std::string& mesh, const std::string& material, const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation) :
+PlanetView::PlanetView(Ogre::SceneManager* sceneManager, const std::string& name, const std::string& mesh, const std::string& material, Ship* ship, const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation) :
     name(name),
     mesh(mesh),
     material(material),
-    planet(Planet(position, mass, radius, rotation)),
+    planet(Planet(ship, position * MathUtilities::scaleFactor, mass * MathUtilities::scaleFactor, radius * MathUtilities::scaleFactor, rotation)),
     planetController(PlanetController(this)),
     sceneManager(sceneManager) {
 

@@ -9,12 +9,14 @@
 class Ship : public Transform {
 protected:
     Ogre::Real size;
+    Ogre::Real mass;
 
 public:
     Ship();
 
     void setSize(const Ogre::Real size);
     Ogre::Real getSize();
+    Ogre::Real getMass();
 };
 
 #endif
