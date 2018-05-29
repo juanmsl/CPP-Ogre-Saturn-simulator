@@ -37,7 +37,7 @@ void App::createScene() {
   this->planets.push_back(new PlanetView(this->m_SceneMgr, "tierra", "earth.mesh", "", Ogre::Vector3(14900, 0, 0), Ogre::Real(10), Ogre::Real(63), Ogre::Radian(0.01)));
   this->planets.push_back(new PlanetView(this->m_SceneMgr, "marte", "Mars.mesh", "", Ogre::Vector3(22700, 0, 0), Ogre::Real(10), Ogre::Real(34), Ogre::Radian(0.01)));
   this->planets.push_back(new PlanetView(this->m_SceneMgr, "jupiter", "jupiter.mesh", "", Ogre::Vector3(77800, 0, 0), Ogre::Real(10), Ogre::Real(700), Ogre::Radian(0.01)));
-  //this->planets.push_back(new PlanetView(this->m_SceneMgr, "saturno", "Saturn.mesh", "", Ogre::Vector3(142900, 0, 0), Ogre::Real(10), Ogre::Real(580), Ogre::Radian(0.01)));
+  this->planets.push_back(new PlanetView(this->m_SceneMgr, "saturno", "Saturn.mesh", "", Ogre::Vector3(142900, 0, 0), Ogre::Real(10), Ogre::Real(580), Ogre::Radian(0.01)));
   this->planets.push_back(new PlanetView(this->m_SceneMgr, "urano", "Urano.mesh", "", Ogre::Vector3(287000, 0, 0), Ogre::Real(10), Ogre::Real(253), Ogre::Radian(0.01)));
   this->planets.push_back(new PlanetView(this->m_SceneMgr, "neptuno", "Neptuno.mesh", "", Ogre::Vector3(450400, 0, 0), Ogre::Real(10), Ogre::Real(246), Ogre::Radian(0.01)));
 }

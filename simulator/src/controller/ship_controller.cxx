@@ -21,7 +21,7 @@ void ShipController::acelerate() {
     Ogre::Vector3 velocity = this->ship->getVelocity();
     Ogre::Vector3 direction = this->ship->getDirection();
 
-    velocity = direction * (velocity.length() + 10);
+    velocity = direction * (velocity.length() + 500);
 
     this->ship->setVelocity(velocity);
 }
@@ -30,7 +30,7 @@ void ShipController::deacelerate() {
     Ogre::Vector3 velocity = this->ship->getVelocity();
     Ogre::Vector3 direction = this->ship->getDirection();
 
-    velocity = direction * (velocity.length() - 10);
+    velocity = direction * (velocity.length() - 500);
 
     this->ship->setVelocity(velocity);
 }
