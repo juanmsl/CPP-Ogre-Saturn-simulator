@@ -8,6 +8,7 @@
 
 #include <controller/planet_controller.hxx>
 #include <model/planet.hxx>
+#include <common/math_utilities.hxx>
 
 class PlanetView {
 protected:
@@ -21,7 +22,7 @@ protected:
     Planet planet;
 
 public:
-    PlanetView(Ogre::SceneManager* sceneManager, const std::string& name, const std::string& mesh, const std::string& material, const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation);
+    PlanetView(Ogre::SceneManager* sceneManager, const std::string& name, const std::string& mesh, const std::string& material, Ship* ship, const Ogre::Vector3 position, const Ogre::Real mass, const Ogre::Real radius, const Ogre::Radian rotation);
     virtual ~PlanetView();
 
     void draw();
