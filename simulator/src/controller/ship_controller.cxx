@@ -21,7 +21,11 @@ void ShipController::acelerate() {
     Ogre::Vector3 velocity = this->ship->getVelocity();
     Ogre::Vector3 direction = this->ship->getDirection();
 
-    velocity += velocity.normalisedCopy() * MathUtilities::lightVelocity * MathUtilities::scaleFactor;
+    if(velocity == Ogre::Vector3::ZERO) {
+        velocity += direction.normalisedCopy() * MathUtilities::lightVelocity * MathUtilities::scaleFactor;
+    } else {
+        velocity += velocity.normalisedCopy() * MathUtilities::lightVelocity * MathUtilities::scaleFactor;
+    }
 
     //velocity = direction * (velocity.length() * 2);
 

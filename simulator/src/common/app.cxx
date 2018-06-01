@@ -20,8 +20,8 @@ void App::createScene() {
   Ogre::Light* light1 = this->m_SceneMgr->createLight("Light1");
   light1->setType(Ogre::Light::LT_POINT);
   light1->setPosition(Ogre::Vector3(0, 0, 0));
-  light1->setDiffuseColour(1.0, 1.0, 1.0);
-  light1->setSpecularColour(1.0, 1.0, 1.0);
+  light1->setDiffuseColour(5.0, 5.0, 5.0);
+  light1->setSpecularColour(5.0, 5.0, 5.0);
 
   Ogre::Light* light2 = this->m_SceneMgr->createLight("Light2");
   light2->setType(Ogre::Light::LT_POINT);
