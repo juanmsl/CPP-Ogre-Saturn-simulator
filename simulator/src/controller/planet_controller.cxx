@@ -9,7 +9,6 @@ PlanetController::~PlanetController() {}
 
 void PlanetController::update(const Ogre::Real time) {
     this->attract();
-    this->planetView->draw();
 }
 
 void PlanetController::attract() {
@@ -30,6 +29,6 @@ void PlanetController::attract() {
     velocity += F;
 
     ship->setVelocity(velocity);
-
+    //ship->setDirection(velocity.normalisedCopy());
 }
 

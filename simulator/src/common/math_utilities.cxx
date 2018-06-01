@@ -1,6 +1,7 @@
 #include <common/math_utilities.hxx>
 
 Ogre::Real MathUtilities::scaleFactor = 1.0;
+Ogre::Real MathUtilities::lightVelocity = 300000000;
 
 bool MathUtilities::isInsideInTriangle(const Ogre::Vector3& p, const Ogre::Vector3& a, const Ogre::Vector3& b, const Ogre::Vector3& c) {
     Ogre::Vector3 v0 = b - a;
